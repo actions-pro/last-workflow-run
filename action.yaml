@@ -1,0 +1,27 @@
+name: Last Workflow Run
+description: Get metadata on the last workflow run
+
+inputs:
+  branch:
+    description: The name of the branch
+    default: ${{ github.head_ref || github.ref_name }}
+  conclusion:
+    description: The conclusion of the workflow run
+    default: success
+  repository:
+    description: The owner and repository name
+    default: ${{ github.repository }}
+  token:
+    description: A token to authenticate on behalf of the GitHub App installed on your repository
+    default: ${{ github.token }}
+  workflow:
+    description: The name of the workflow
+    default: ${{ github.workflow }}
+
+outputs:
+  sha:
+    description: The sha of the last workflow run
+
+runs:
+  using: node20
+  main: lib/mod.js
