@@ -1,11 +1,11 @@
 {
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "prepare": "git config core.hooksPath .github",
     "build": "pnpm run \"/build:.+/\"",
     "build:prettier": "prettier --print-width 100 --no-semi --single-quote --quote-props consistent --check --ignore-unknown src",
     "build:tsc": "tsc --incremental --noEmit --verbatimModuleSyntax --strict --moduleResolution bundler --module esnext --target esnext --lib esnext --lib webworker --tsBuildInfoFile tsconfig.tsbuildinfo src/mod.ts",
-    "build:tsup": "tsup src/mod.ts --clean --format esm --out-dir lib --sourcemap --silent"
+    "build:tsup": "tsup src/mod.ts --clean --format cjs --out-dir lib --sourcemap --silent"
   },
   "devDependencies": {
     "@actions/core": "^1.10.1",

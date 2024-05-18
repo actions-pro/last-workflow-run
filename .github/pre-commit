@@ -1,3 +1,2 @@
-pnpm check
 pnpm build
 git add lib
