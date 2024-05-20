@@ -6,8 +6,8 @@ This actions attempts to find the git `sha` of the last successful workflow run.
 
 ```yaml
 - name: Get last workflow run
-  id: last_workflow_run
+  id: last-workflow-run
   uses: actions-pro/last-workflow-run@v1
 
-- run: echo ${{ steps.last_workflow_run.outputs.sha }}
+- run: echo ${{ steps.last-workflow-run.outputs.sha }}
 ```
